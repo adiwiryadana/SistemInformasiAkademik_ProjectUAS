@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Alexandria", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: blue;
+}
+
+.jumbotron {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.logout {
+  margin-left: 1rem;
+}
+
+h4 {
+  padding-left: 3rem;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.addusr {
+  margin-bottom: 2rem;
+}
+
+.detail {
+  width: 20px;
+  height: 20px;
+}
+
+.list {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.text-muted {
+  font-size: 12px;
+}
+
+#main {
+  min-height: 100vh;
+}
+
+#hide1 {
+  display: none;
+}
+
+#DisplayClock {
+  padding-right: 30px;
+  margin-top: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.navbar-brand {
+  font-size: 15px;
+}
+
+.bi-power {
+  cursor: pointer !important;
+  border: 0px solid;
+  margin-right: 2rem;
+  padding: 7px;
+  border-color: rgb(43, 41, 41);
+}
+
+.bi-power:hover {
+  background-color: rgb(233, 157, 17);
+  color: black;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  margin-top: 25px;
+  right: 25px;
+  font-size: 50px;
+  /* margin-left: 50px; */
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(44, 43, 43);
+  color: rgb(197, 196, 196);
+  /* padding: 10px 15px; */
+  border: none;
+}
+
+.openbtn:hover {
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+.navigation {
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.nav-item .nav-link {
+  color: rgb(194, 186, 186);
+  margin-left: 0;
+  font-size: 15px;
+}
+
+.nav-item .nav-link:hover {
+  background-color: rgb(233, 157, 17);
+}
+
+.nav-item {
+  border-bottom: 1px solid;
+  border-color: dimgrey;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+}
