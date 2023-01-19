@@ -1,9 +1,5 @@
 <?php
 
-// procedural 
-// $koneksi = mysqli_connect("localhost","root","","siak"); 
-
-// OOP 
 class koneksi {
 
 	private $host = "localhost";
@@ -74,22 +70,6 @@ class koneksi {
 		}
 
 	}
-
-
-	
-
-	// public function nilai(){
-	// 	$db = new koneksi();
-	// 	$koneksi = $db->getKoneksi();
-
-	// 	$data=mysqli_query($koneksi, "SELECT * FROM nilai  ");
-	// 	// whe re kode_mk='$_SESSION[kode_mk]'
-	// 	while($row=mysqli_fetch_array($data)){
-	// 		$hasil[]=$row;
-	// 	}
-	// 	return $hasil;
-	// }
-
 
 }
 
