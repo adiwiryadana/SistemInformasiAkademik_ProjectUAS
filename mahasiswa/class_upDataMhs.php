@@ -1,6 +1,6 @@
 <?php 
 include('../koneksi.php');
-include('class_getNim.php');
+include('../admin/user panel/class_getNim.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Nim=htmlspecialchars($_POST["nim"]);
