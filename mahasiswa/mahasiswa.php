@@ -1,6 +1,6 @@
 <?php
 include ('../cekmahasiswa.php');
-include ('../koneksi.php');
+include('../admin/user panel/class_getNim.php');
 $db = new koneksi();
 $tampil = $db->tampilmhs();
 
