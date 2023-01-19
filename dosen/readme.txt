@@ -1,1 +1,0 @@
-tempat up file dosen
