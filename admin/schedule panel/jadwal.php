@@ -1,13 +1,14 @@
 <?php 
+// koneksi ke database
 include('../../koneksi.php');
 include('../../cekadmin.php');
-
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
-
+//Code ini digunakan untuk memeriksa apakah metode yang digunakan dalam permintaan (request) adalah metode POST, jika ya, maka akan mengambil nilai dari input form dengan name "kode_kelas" dan menyimpan nilai tersebut dalam variabel $kode_kelas.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kode_kelas = ($_POST["kode_kelas"]);
 }
+//Code ini digunakan untuk memeriksa apakah ada nilai yang diterima dari parameter $_GET dengan nama "kode_kelas". Jika ada, maka nilai tersebut disimpan dalam variabel $kode_kelas.
 if(isset($_GET['kode_kelas'])){
     $kode_kelas = $_GET['kode_kelas'];
 }
@@ -113,6 +114,7 @@ if(isset($_GET['kode_kelas'])){
     </div>
 
     <!-- Main content -->
+    //query untuk menampilkan data dari 2 tabel di database 
     <?php 
         $no = 1;
         $query = 
@@ -148,7 +150,7 @@ if(isset($_GET['kode_kelas'])){
                             <th>Dosen</th>
                             <th colspan="2">Aksi</th>
                         </tr>
-
+                        //Code ini digunakan untuk mengambil baris per baris dari hasil query yang dikembalikan oleh fungsi mysqli_query() dan menyimpannya dalam bentuk array. Setiap baris dari hasil query dapat diakses melalui array yang dikembalikan oleh mysqli_fetch_array().
                         <?php 
                             while ($row = mysqli_fetch_array($hasil)) {
                         ?>
@@ -188,6 +190,7 @@ if(isset($_GET['kode_kelas'])){
                         <div class="mb-1">
                             <label for="kode_mk" class="form-label">Kode Matakuliah</label>
                             <select name="kode_mk" class="form-control" id="kode_mk">
+                                //query untuk menampilkan data pada tabel matakuliah dari database
                                 <?php
                                     $query = "SELECT * FROM matakuliah";
                                     $hasil = mysqli_query($koneksi,$query);
