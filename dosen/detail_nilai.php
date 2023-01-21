@@ -1,9 +1,11 @@
 <?php
+//koneksi ke database
 include('../cekdosen.php');
 include ('../koneksi.php');
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
+//berfungsi untuk memeriksa apakah ada nilai yang diterima dari parameter $_GET dengan nama "kode_mk". Jika ada, maka nilai tersebut disimpan dalam variabel $kode_mk.
 if(isset($_GET['kode_mk'])){
     $kode_mk = $_GET['kode_mk']; 
 }
@@ -117,7 +119,8 @@ if(isset($_GET['kode_mk'])){
                             <th>Tugas</th>
                             <th colspan="2">Aksi</th>
                         </th>
-
+                         
+                        //query untuk menampilkan data dari database
                         <?php 
                             $data=mysqli_query($koneksi, "SELECT mahasiswa.nim, mahasiswa.nama, kelas.kode_kelas, nilai.uas, uts, tugas, kuis FROM nilai inner join mahasiswa on mahasiswa.nim = nilai.nim 
                             inner join kelas on mahasiswa.kode_kelas = kelas.kode_kelas
