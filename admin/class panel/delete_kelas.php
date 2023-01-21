@@ -1,7 +1,7 @@
 <?php
 include('../../koneksi.php'); //menyisipkan file koneksi.php kedalam file delete_kelas.php
 
-class delKelas{ //membuat dan mendeklarasikan class delKelas yang dimaan didalamnya terdapat properti dan juga method
+class delKelas{ //membuat dan mendeklarasikan class delKelas yang dimana didalamnya terdapat properti dan juga method
 
     public $kode_kelas; //membuat properti $kode_kelas yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
     public $data; //membuat properti $data yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
