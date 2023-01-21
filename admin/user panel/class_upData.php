@@ -1,22 +1,25 @@
 <?php 
-include('../../koneksi.php');
 
-class update {
+//koneksi ke database
+include('../../koneksi.php'); //menyisipkan file koneksi.php kedalam file class_upData.php
 
-    public $Nim;
-    public $tempat_lahir;
-    public $tanggal_lahir;
-    public $gender;
-    public $phone;
-    public $email;
-    public $ayah;
-    public $ibu;
-    public $prodi;
-    public $alamat;
-    public $kode_kelas;
-    public $username;
-    public $password;
+class update { //membuat dan mendeklarasikan class update yang dimana terdapat properti dan juga method
+    
+    public $Nim; //membuat properti $Nim yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $tempat_lahir; //membuat properti $tempat_lahir yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $tanggal_lahir; //membuat properti $tanggal_lahir yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $gender; //membuat properti $gender yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $phone; //membuat properti $phone yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $email; //membuat properti $email yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $ayah; //membuat properti $ayah yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $ibu; //membuat properti $ibu yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $prodi; //membuat properti $prodi yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $alamat; //membuat properti $alamat yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $kode_kelas; //membuat properti $kode_kelas yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $username; //membuat properti $username yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $password; //membuat properti $password yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
 
+    //membuat method __construct()
     function __construct()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,6 +39,7 @@ class update {
         }
     }
 
+    //membuat method UpdateMhs()
     function UpdateMhs() {
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -84,6 +88,7 @@ class update {
 
 }
 
+//membuat objek dari class update
 $update = new update();
 $postUpdate = $update->UpdateMhs();
 
