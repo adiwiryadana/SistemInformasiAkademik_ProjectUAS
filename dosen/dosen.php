@@ -1,12 +1,17 @@
 <?php
+// koneksi ke database
 include('../cekdosen.php');
 include ('../koneksi.php');
 $db = new koneksi();
+//Code ini digunakan untuk mengambil koneksi ke database dan menampilkan data dari tabel dosen.
 $koneksi = $db->getKoneksi();
 $tampil = $db->tampildsn();
+//Code ini digunakan untuk mengambil nilai dari session dengan nama 'nim' dan menyimpan nilai tersebut dalam variabel $NIM.
 $NIM=$_SESSION ['nim'] ;
+//query untuk menampilkan data dari database
 $query="SELECT * from matakuliah where nim='$NIM'";
 $sql= mysqli_query($koneksi,$query);
+//code ini berfungsi untuk apa
 $dt= mysqli_fetch_array($sql);
 $kode_mk = $dt['kode_mk'];
 ?>
@@ -149,6 +154,7 @@ $kode_mk = $dt['kode_mk'];
         </div>
     </section>
     
+    //Code ini digunakan untuk mengambil data dari jadwal dosen dan mengecek apakah ada data yang ditemukan atau tidak.
     <?php
         $jdw = $db->jdw_dsn();
         if (mysqli_num_rows($db->data)>0) {
