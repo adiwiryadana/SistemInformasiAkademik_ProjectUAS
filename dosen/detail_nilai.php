@@ -117,12 +117,14 @@ if(isset($_GET['kode_mk'])){
                             <th>UAS</th>
                             <th>Kuis</th>
                             <th>Tugas</th>
+                            <th>Rata - Rata</th>
+                            <th>Nilai Akhir</th>
                             <th colspan="2">Aksi</th>
                         </th>
                          
                         //query untuk menampilkan data dari database
                         <?php 
-                            $data=mysqli_query($koneksi, "SELECT mahasiswa.nim, mahasiswa.nama, kelas.kode_kelas, nilai.uas, uts, tugas, kuis FROM nilai inner join mahasiswa on mahasiswa.nim = nilai.nim 
+                            $data=mysqli_query($koneksi, "SELECT mahasiswa.nim, mahasiswa.nama, kelas.kode_kelas, nilai.uas, uts, tugas, kuis, rata_rata, nilai_akhir FROM nilai inner join mahasiswa on mahasiswa.nim = nilai.nim 
                             inner join kelas on mahasiswa.kode_kelas = kelas.kode_kelas
                             where kode_mk='$kode_mk' order by kelas.kode_kelas");
 
@@ -138,6 +140,8 @@ if(isset($_GET['kode_mk'])){
                                 <td><?php echo $row['uas'] ?></td>
                                 <td><?php echo $row['kuis'] ?></td>
                                 <td><?php echo $row['tugas'] ?></td>
+                                <td><?php echo $row['rata_rata'] ?></td>
+                                <td><?php echo $row['nilai_akhir'] ?></td>
                                 <td>
                                     <a href="up_nilai.php?nim=<?php echo $row['nim'];?>&kode_mk=<?php echo $kode_mk;?>"><span class="badge rounded-pill text-bg-success"><i class="bi bi-pencil"></i></span></a>
                                 </td>
