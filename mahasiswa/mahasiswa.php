@@ -246,7 +246,9 @@ $tampil = $db->tampilmhs();
         </div>
     </section>
     <?php } ?>
+    
 
+    <!-- Nilai -->
     <?php //syntax untuk menampilkan data nilai mahasiswa
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -254,7 +256,7 @@ $tampil = $db->tampilmhs();
         $data = mysqli_fetch_array($query);
         $no = 1;
         $query = 
-            "SELECT nilai.kode_mk, matakuliah.nama_mk, uas, uts, tugas, kuis
+            "SELECT nilai.kode_mk, matakuliah.nama_mk, uas, uts, tugas, kuis, rata_rata, nilai_akhir
             FROM nilai inner join matakuliah 
             ON nilai.kode_mk = matakuliah.kode_mk
             WHERE nilai.nim='$_SESSION[nim]'";
@@ -262,7 +264,7 @@ $tampil = $db->tampilmhs();
         $no=1;
         if (mysqli_num_rows($sql) > 0){
     ?>
-    <!-- Nilai -->
+  
     <section id="nilai">
         <div class="container d-flex justify-content-center addusr">
             <div class="card" style="width: 70rem;">
@@ -279,19 +281,23 @@ $tampil = $db->tampilmhs();
                             <th>UTS</th>
                             <th>Kuis</th>
                             <th>Tugas</th>
+                            <th>Rata - Rata</th>
+                            <th>Nilai Akhir</th>
                         </tr>
 
                         <?php //melakuan READ data nilai mahasiswa
                         while ($row = mysqli_fetch_array($sql)) {
                         ?>
                         <tr>
-                        <td><?php echo $no++?></td>
+                            <td><?php echo $no++?></td>
                             <td><?php echo $row['kode_mk'];?></td>
                             <td><?php echo $row['nama_mk'];?></td>
                             <td><?php echo $row['uas'];?></td>
                             <td><?php echo $row['uts'];?></td>
                             <td><?php echo $row['kuis'];?></td>
                             <td><?php echo $row['tugas'];?></td>
+                            <td><?php echo $row['rata_rata'];?></td>
+                            <td><?php echo $row['nilai_akhir'];?></td>
                         </tr>
                         <?php } ?>
                     </table> 
