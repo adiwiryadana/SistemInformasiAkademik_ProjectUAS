@@ -1,11 +1,12 @@
 <?php
-include('../../koneksi.php');
+include('../../koneksi.php'); //menyisipkan file koneksi.php kedalam file delete_kelas.php
 
-class delKelas{
+class delKelas{ //membuat dan mendeklarasikan class delKelas yang dimaan didalamnya terdapat properti dan juga method
 
-    public $kode_kelas;
-    public $data;
+    public $kode_kelas; //membuat properti $kode_kelas yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $data; //membuat properti $data yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
 
+    //membuat method __construct() yang dinyatakan sebagai public
     public function __construct()
     {
         if(isset($_GET['kode_kelas'])){
@@ -13,6 +14,7 @@ class delKelas{
         }
     }
 
+    //membuat method delete() yang dinyatakan sebagai public
     public function delete(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -25,6 +27,7 @@ class delKelas{
     }
 }
 
+//membuat objek dari class delKelas
 $delObj = new delKelas();
 $hasil = $delObj->delete();
 ?>
