@@ -1,13 +1,16 @@
 <?php
+// koneksi ke database
 include('../cekdosen.php');
 include ('../koneksi.php');
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 // $tampil = $db->nilai();
 
+//Code ini digunakan untuk memeriksa apakah ada nilai yang diterima dari parameter $_GET dengan nama "kode_mk". Jika ada, maka nilai tersebut disimpan dalam variabel $kode_mk.
 if(isset($_GET['kode_mk'])){
     $kode_mk = $_GET['kode_mk']; 
 }
+//Code ini digunakan untuk memeriksa apakah ada nilai yang diterima dari parameter $_GET dengan nama "nim". Jika ada, maka nilai tersebut disimpan dalam variabel $nim.
 if(isset($_GET['nim'])){
     $nim = $_GET['nim']; 
 }
@@ -102,6 +105,7 @@ if(isset($_GET['nim'])){
                 </div>
                 <div class="card-body">
                     <form action="class_up_nilai.php" method="post">
+                    //query untuk menampilkan data tabel nilai dari database 
                     <?php 
                             $data=mysqli_query($koneksi, "SELECT * FROM nilai where kode_mk='$kode_mk' AND nim='$nim'");
                             $row = mysqli_fetch_array($data)
