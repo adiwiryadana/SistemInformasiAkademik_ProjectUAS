@@ -7,7 +7,7 @@ if(!isset($_SESSION['username'])){
 	
 }
 
-//cek level user
+//cek level user mahasiswa
 if($_SESSION['level']!="Mahasiswa"){
     die("Anda bukan Mahasiswa");
 }
