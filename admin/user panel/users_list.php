@@ -1,7 +1,8 @@
 <?php
-include('../../cekadmin.php');
-include('../../koneksi.php');
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php kedalam file users_list.php
+include('../../koneksi.php'); //menyisipkan file koneksi.php kedalam file users_list.php (koneksi ke database)
 
+//membuat objek dari class koneksi
 $db = new koneksi();
 $tampil = $db->addUser();
 ?>
