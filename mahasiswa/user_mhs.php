@@ -1,4 +1,5 @@
 <?php
+//menyertakan file cekmahasiswa.php, koneksi.php, class_getNim.php
 include ('../cekmahasiswa.php');
 include ('../koneksi.php');
 include('../admin/user panel/class_getNim.php');
@@ -108,7 +109,7 @@ $tampil = $db->tampilmhs();
                 </div>
                 <div class="card-body">
                     <form action="class_upDataMhs.php" method="post" enctype="multipart/form-data">
-                        <?php
+                        <?php //form untuk melakukan update data diri
                         foreach($tampil as $row);
                         ?>
                         <div class="mb-2">
