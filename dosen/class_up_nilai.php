@@ -14,10 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uts = ($_POST["uts"]);
     $uas = ($_POST["uas"]);
     
-    
+    //menghitung rata - rata berdasarkan nilai uas, uts, kuis, tugas
+    $rata_rata = ($uas + $uts + $kuis + $tugas) / 4;     
+    //pengkondisian untuk mengecek nilai akhir berdasarkan rata - rata nilai mahasiswa
+    if ($rata_rata >= 88) {
+        $nilai_akhir = 'A';
+    } else if ($rata_rata >= 80) {
+        $nilai_akhir = 'B';
+    } else if ($rata_rata >= 60) {
+        $nilai_akhir = 'C';
+    } else if ($rata_rata < 60) {
+        $nilai_akhir = 'D';
+    }
     //Query update data pada tabel anggota
     $sql = "UPDATE nilai SET 
-    kuis='$kuis', tugas='$tugas', uts='$uts', uas='$uas' WHERE nim='$Nim'";
+    kuis='$kuis', tugas='$tugas', uts='$uts', uas='$uas', rata_rata='$rata_rata', nilai_akhir='$nilai_akhir' WHERE nim='$Nim' AND kode_mk='$kode_mk'";
 
 
     // mengeksekusi query diatas 
