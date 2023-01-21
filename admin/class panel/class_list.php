@@ -1,20 +1,25 @@
 <?php
-include("../../koneksi.php");
-include('../../cekadmin.php');
+include("../../koneksi.php");  //menyisipkan file koneksi.php ke dalam class_list.php
+include('../../cekadmin.php'); //menyisipkan file cek_admin.php ke dalam class_list.php
 
 
-class tampil{
-    public $query;
+class tampil{   //membuat dan mendeklarasikan class bernama tampil yang dimana didalam kelas ini akan terdapat properti dan juga method
+    
+    //membuat property $data yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $query; 
+    
+    //membuat property $data yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
     public $data;
-
-    public function tampil_list(){
-        $db = new koneksi();
-        $koneksi = $db->getKoneksi();
-
-        $this->query = mysqli_query($koneksi, "SELECT * FROM kelas");
+    
+    //membuat method tampil_list () yang dinyatakan sebagai public
+    public function tampil_list(){ 
+        $db = new koneksi(); 
+        $koneksi = $db->getKoneksi(); 
+        $this->query = mysqli_query($koneksi, "SELECT * FROM kelas"); 
     }
 }
 
+//membuat objek dari class tampil
 $dataObj = new tampil();
 $row = $dataObj->tampil_list();
 ?>
@@ -24,7 +29,7 @@ $row = $dataObj->tampil_list();
 
 <head>
     <title>SIAK - LIST KELAS</title>
-    <?php include "../../header.php" ?>
+    <?php include "../../header.php" ?> //menyisipkan file header.php ke dalam class_list.php
     <link rel="stylesheet" href="../../style.css">
 </head>
 
@@ -157,7 +162,7 @@ $row = $dataObj->tampil_list();
     </div>
     
     <!-- Footer -->
-    <?php include "../../footer.php" ?>
+    <?php include "../../footer.php" ?> //menyisipkan file footer.php ke dalam class_list.php
     
     <!-- JS -->
     <script>
