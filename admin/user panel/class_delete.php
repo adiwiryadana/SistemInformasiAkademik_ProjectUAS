@@ -1,9 +1,12 @@
 <?php 
-include('../../koneksi.php');
-include('class_getNim.php');
 
-class delete {
+//koneksi ke database
+include('../../koneksi.php'); //menyisipkan file koneksi.php ke dalam class_delete.php
+include('class_getNim.php'); //menyisipkan file class_getNim.php ke dalam class_delete.php
 
+class delete { //membuat dan mendeklarasikan class delete
+
+    //membuat method delete ()
     function delete(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -47,6 +50,7 @@ class delete {
     }
 }
 
+//membuat objek dari class delete
 $del = new delete();
 $delete = $del->delete();
 
