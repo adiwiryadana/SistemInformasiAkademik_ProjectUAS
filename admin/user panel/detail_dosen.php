@@ -1,7 +1,8 @@
 <?php
-    include('../../cekadmin.php');
-    include('../../koneksi.php');
-    include('class_getNim.php');
+
+    include('../../cekadmin.php'); //menyisipkan file cekadmin.php ke dalam detail_dosen.php
+    include('../../koneksi.php'); //menyisipkan file koneksi.php ke dalam detail_dosen.php (koneksi ke database)
+    include('class_getNim.php'); //menyisipkan file class_getNim.php ke dalam detail_dosen.php
 
     $db = new koneksi();
     $koneksi = $db->getKoneksi();
