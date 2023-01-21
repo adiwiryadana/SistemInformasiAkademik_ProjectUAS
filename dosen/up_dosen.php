@@ -1,14 +1,16 @@
 <?php
+// koneksi ke database
 include('../cekdosen.php');
 include ('../koneksi.php');
 include('../admin/user panel/class_getNim.php');
-
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-
+//Code ini digunakan untuk mengambil NIM dari sebuah class yang ditentukan sebelumnya.
 $getNim = new getNim();
 $nim = $getNim->getNim();
+
+//Code ini digunakan untuk mengambil data dari tabel dosen.
 $db = new koneksi();
 $tampil = $db->tampildsn();
 ?>
