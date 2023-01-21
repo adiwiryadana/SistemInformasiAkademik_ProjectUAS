@@ -13,7 +13,7 @@ $tampil = $db->tampilmhs();
 
 <head>
     <title>SIAK - MAHASISWA</title>
-    <?php include "../header.php" ?> //menyertakan file header.php
+    <?php include "../header.php" ?>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -36,8 +36,9 @@ $tampil = $db->tampilmhs();
                 </li>
                 <div id="DisplayClock" class="clock text-white" onload="showTime()"></div>
                     
-                 //script untuk menampilkan waktu
-                <script> 
+                 
+                <script>
+                    //script untuk menampilkan waktu
                     function showTime(){
                     var date = new Date();
                     var h = date.getHours();
@@ -107,8 +108,9 @@ $tampil = $db->tampilmhs();
                 <div class="card-body table-responsive" >
                     <table class="table table-bordered table-striped">
                        
-                    //menampilkan (READ) data mahasiswa pada database mahasiswa
+                   
                     <?php
+                     //menampilkan (READ) data mahasiswa pada database mahasiswa
                     foreach($tampil as $row) {;
                     ?>
                         <tr>
@@ -183,7 +185,7 @@ $tampil = $db->tampilmhs();
     </section>
 
 
-//script php untuk menampilkan jadwal mahasiswa
+<!-- script php untuk menampilkan jadwal mahasiswa -->
     <?php 
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -228,7 +230,7 @@ $tampil = $db->tampilmhs();
                             while ($row = mysqli_fetch_array($hasil)) {
                         ?>
                         <tr>
-                            //menampilkan jadwal ke dalam table 
+                            <!--menampilkan jadwal ke dalam table  -->
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row['kode_mk']; ?></td>
                             <td><?php echo $row['nama_mk']; ?></td>
@@ -245,7 +247,7 @@ $tampil = $db->tampilmhs();
     </section>
     <?php } ?>
 
-    <?php 
+    <?php //syntax untuk menampilkan data nilai mahasiswa
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
         $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$_SESSION[nim]'");
@@ -279,7 +281,7 @@ $tampil = $db->tampilmhs();
                             <th>Tugas</th>
                         </tr>
 
-                        <?php
+                        <?php //melakuan READ data nilai mahasiswa
                         while ($row = mysqli_fetch_array($sql)) {
                         ?>
                         <tr>
