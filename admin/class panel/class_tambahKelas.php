@@ -1,11 +1,13 @@
 <?php
-include('../../koneksi.php');
+include('../../koneksi.php'); //menyisipkan file koneksi.php kedalam class_tambahKelas.php
 
+//membuat dan mendeklarasikan class addClass yang dimana didalamnya terdapat property dan method
 class addClass {
-    public $kode_kelas;
-    public $kapasitas;
-    public $query;
+    public $kode_kelas; //membuat property $kode_kelas yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $kapasitas; //membuat property $kapasitas yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+    public $query; //membuat property $query yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
 
+    //membuat method __construct() yang dinyatakan sebagai public
     public function __construct(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->kode_kelas = ($_POST["kode_kelas"]);
@@ -13,6 +15,7 @@ class addClass {
         }
     }
 
+    //membuat method add() yang dinyatakan sebagai public
     public function add(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -25,6 +28,7 @@ class addClass {
     }
 }
 
+//membuat objek dari clas addClass
 $addObj = new addClass();
 $hasil = $addObj->add();
 ?>
