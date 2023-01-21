@@ -31,10 +31,11 @@ class koneksi {
 		return $hasil;
 	}
 	
+	//membuat function untuk menampilkan (read) database biodata mahasiswa yang akan digunakan pada file mahasiswa.php
 	public function tampilmhs(){
 		$db = new koneksi();
 		$koneksi = $db->getKoneksi();
-
+		
 		$data=mysqli_query($koneksi, "SELECT * FROM mahasiswa where nim='$_SESSION[nim]'");
 		while($row=mysqli_fetch_array($data)){
 			$hasil[]=$row;
