@@ -1,9 +1,10 @@
 <?php
+//menyertakan file cekmahasiswa.php dan koneksi.php 
 include ('../cekmahasiswa.php');
 include ('../koneksi.php');
 
 $db = new koneksi();
-$tampil = $db->tampilmhs();
+$tampil = $db->tampilmhs(); 
 
 ?>
 
@@ -12,7 +13,7 @@ $tampil = $db->tampilmhs();
 
 <head>
     <title>SIAK - MAHASISWA</title>
-    <?php include "../header.php" ?>
+    <?php include "../header.php" ?> //menyertakan file header.php
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -34,7 +35,9 @@ $tampil = $db->tampilmhs();
                     &nbsp; &nbsp;|
                 </li>
                 <div id="DisplayClock" class="clock text-white" onload="showTime()"></div>
-                <script>
+                    
+                 //script untuk menampilkan waktu
+                <script> 
                     function showTime(){
                     var date = new Date();
                     var h = date.getHours();
@@ -103,6 +106,8 @@ $tampil = $db->tampilmhs();
                 </div>
                 <div class="card-body table-responsive" >
                     <table class="table table-bordered table-striped">
+                       
+                    //menampilkan (READ) data mahasiswa pada database mahasiswa
                     <?php
                     foreach($tampil as $row) {;
                     ?>
@@ -176,6 +181,7 @@ $tampil = $db->tampilmhs();
             </div>
         </div>
     </section>
+
 
     <?php 
         $db = new koneksi();
