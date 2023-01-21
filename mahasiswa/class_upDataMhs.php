@@ -1,4 +1,5 @@
 <?php 
+//menyertakan file koneksi.php dan class_getNim.php
 include('../koneksi.php');
 include('../admin/user panel/class_getNim.php');
 
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $db = new koneksi();
     $koneksi = $db->getKoneksi();
-
+    //query untuk melakukan update pada data mahasiswa
     $sql = "UPDATE mahasiswa SET tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir',
         gender='$gender', phone='$phone', email='$email', ayah='$ayah',
         ibu='$ibu', prodi='$prodi', alamat='$alamat' WHERE nim='$Nim'";
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hasil =  mysqli_query($koneksi, $sql);
 
         if($hasil) {
-            header("Location:mahasiswa.php");
+            header("Location:mahasiswa.php"); //jika berhasil, maka akan kembali ke halaman mahasiswa.php
         } else {
             echo '<script language="javascript">';
             echo 'alert("Gagal Melakukan Update!")';
