@@ -183,6 +183,7 @@ $tampil = $db->tampilmhs();
     </section>
 
 
+//script php untuk menampilkan jadwal mahasiswa
     <?php 
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -190,6 +191,7 @@ $tampil = $db->tampilmhs();
         $data = mysqli_fetch_array($query);
 
             $no = 1;
+            //queary untuk meakukan READ jadwal mahasiswa dengan melakukan JOIN pada beberapa table
             $query = 
                 "SELECT matakuliah.kode_mk, nama_mk, jadwal.hari, waktu, ruang, dosen.nama
                 FROM 
@@ -226,7 +228,7 @@ $tampil = $db->tampilmhs();
                             while ($row = mysqli_fetch_array($hasil)) {
                         ?>
                         <tr>
-                            
+                            //menampilkan jadwal ke dalam table 
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row['kode_mk']; ?></td>
                             <td><?php echo $row['nama_mk']; ?></td>
