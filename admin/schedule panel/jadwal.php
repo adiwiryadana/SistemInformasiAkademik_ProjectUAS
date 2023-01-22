@@ -114,7 +114,7 @@ if(isset($_GET['kode_kelas'])){
     </div>
 
     <!-- Main content -->
-    //query untuk menampilkan data dari 2 tabel di database 
+    <!-- query untuk menampilkan data dari 2 tabel di database  --> 
     <?php 
         $no = 1;
         $query = 
@@ -150,7 +150,7 @@ if(isset($_GET['kode_kelas'])){
                             <th>Dosen</th>
                             <th colspan="2">Aksi</th>
                         </tr>
-                        //Code ini digunakan untuk mengambil baris per baris dari hasil query yang dikembalikan oleh fungsi mysqli_query() dan menyimpannya dalam bentuk array. Setiap baris dari hasil query dapat diakses melalui array yang dikembalikan oleh mysqli_fetch_array().
+                        <!-- Code ini digunakan untuk mengambil baris per baris dari hasil query yang dikembalikan oleh fungsi mysqli_query() dan menyimpannya dalam bentuk array. Setiap baris dari hasil query dapat diakses melalui array yang dikembalikan oleh mysqli_fetch_array(). -->
                         <?php 
                             while ($row = mysqli_fetch_array($hasil)) {
                         ?>
