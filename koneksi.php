@@ -1,14 +1,16 @@
 <?php
 
-class koneksi {
+class koneksi { //membuat dan mendeklarasikan class koneksi yang dimana didalamnya terdapat properti dan juga method
 
-	private $host = "localhost";
+	//membuat properti yang dinyatakan sebagai private 
+	private $host = "localhost";  
 	private $user = "root";
 	private $pass = "";
 	private $dbname = "siak";
 	private $db_connection = null;
-	public $data;
+	public $data; //membuat properti yang dinyatakan sebagai public
 	
+	//membuat method function getKoneksi() yang diset sebagai public
 	public function getKoneksi() {
 		$this->db_connection = new mysqli($this->host, $this->user, $this->pass, $this->dbname);	
 		if ($this->db_connection->connect_errno) {
@@ -18,6 +20,7 @@ class koneksi {
 		}
 	}
 
+	//membuat method function addUser() yang diset sebagai public
 	public function addUser(){
 		$db = new koneksi();
 		$koneksi = $db->getKoneksi();
@@ -31,7 +34,7 @@ class koneksi {
 		return $hasil;
 	}
 	
-	//membuat function untuk menampilkan (read) database biodata mahasiswa yang akan digunakan pada file mahasiswa.php
+	//membuat function tampilmhs() yang dinyatakan sebagai public untuk menampilkan (read) database biodata mahasiswa yang akan digunakan pada file mahasiswa.php
 	public function tampilmhs(){
 		$db = new koneksi();
 		$koneksi = $db->getKoneksi();
@@ -43,6 +46,7 @@ class koneksi {
 		return $hasil;
 	}
 
+	//membuat method function tampildsn() yang diset sebagai public
 	public function tampildsn(){
 		$db = new koneksi();
 		$koneksi = $db->getKoneksi();
@@ -54,6 +58,7 @@ class koneksi {
 		return $hasil;
 	}
 
+	//membuat method function jdw_dsn() yang diset sebagai public
 	public function jdw_dsn(){
 		$db = new koneksi();
 		$koneksi = $db->getKoneksi();
