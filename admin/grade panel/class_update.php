@@ -1,10 +1,14 @@
 <?php
+
+//koneksi ke database
 include('../../koneksi.php');
-include('../../cekadmin.php');
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php ke dalam file class_update pada grade panel
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-class updateNilai {
+class updateNilai { //membuat dan mendeklarasikan class updateNilai yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $kode_mk;
     public $nim;
     public $uas;
@@ -15,6 +19,7 @@ class updateNilai {
     public $rata_rata;
     public $nilai_akhir;
 
+    //membuat method function __construct() yang dinyatakan sebagai public
     public function __construct(){  
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->nim= ($_POST["nim"]);
@@ -26,6 +31,7 @@ class updateNilai {
         }
     }
     
+    //membuat method function update() yang dinyatakan sebagai public
     public function update(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -51,6 +57,7 @@ class updateNilai {
     }
 }
 
+//membuat objek dari class updateNilai
 $obj = new updateNilai();
 $hasil = $obj->update();
 ?>
