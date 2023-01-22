@@ -116,6 +116,12 @@ $koneksi = $db->getKoneksi();
                             <input type="text" name="nim" class="form-control" id="nim" aria-describedby="nim" required>
                         </div>
                         <div class="mb-3">
+                            <label for="gender" class="form-label">Gender</label> <br>
+                            <input type="radio" name="gender" value ="1" required/> Laki - Laki
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="gender" value ="0" required/> Perempuan
+                        </div>
+                        <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" name="username" class="form-control" id="username" aria-describedby="username" required>
                         </div>
@@ -131,8 +137,10 @@ $koneksi = $db->getKoneksi();
                                 <option value="Mahasiswa">Mahasiswa</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="kode_kelas" class="form-label">Kode Kelas <span style="color:red;">* hanya untuk level mahasiswa!</span></label>
+                        <hr>
+                        <span style="color:red;">* hanya untuk level mahasiswa!</span> <br>
+                        <div class="mb-3 mt-3">
+                            <label for="kode_kelas" class="form-label">Kode Kelas</label>
                             <select name="kode_kelas" class="form-control" id="kode_kelas">
                                 <?php
                                     $query = "SELECT * FROM kelas";
@@ -142,6 +150,17 @@ $koneksi = $db->getKoneksi();
                                 <?php while($select=mysqli_fetch_array($hasil)) {?>
                                 <option value="<?=$select['kode_kelas'] ?>"><?=$select['kode_kelas'] ?></option>
                                 <?php }?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodi" class="form-label">Prodi</label>
+                            <select name="prodi" class="form-control" id="prodi">
+                            <option value="">Pilih Prodi</option>
+                            <option value="Sistem Komputer">S1-Sistem Komputer</option>
+                            <option value="Sistem Informasi">S1-Sistem Informasi</option>
+                            <option value="Teknologi Informasi">S1-Teknologi Informasi</option>
+                            <option value="Bisnis Digital">S1-Bisnis Digital</option>
+                            <option value="Manajemen Informatika">D3-Manajemen Informatika</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3" value="simpan">Submit</button>
