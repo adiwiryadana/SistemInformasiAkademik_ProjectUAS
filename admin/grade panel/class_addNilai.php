@@ -1,7 +1,11 @@
 <?php
-include('../../koneksi.php');
 
-class addNilai {
+//koneksi ke database
+include('../../koneksi.php'); //menyisipkan file koneksi.php ke dalam class_addNilai pada grade panel
+
+class addNilai { //membuat dan mendeklarasikan class addNilai yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $nim;
     public $kode_mk;
     public $uas;
@@ -13,7 +17,7 @@ class addNilai {
     public $rata_rata;
     public $nilai_akhir;
 
-
+    //membuat method function __construct() yang dinyatakan sebagai public
     public function  __construct(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->nim = ($_POST["nim"]);
@@ -24,7 +28,8 @@ class addNilai {
             $this->tugas = ($_POST["tugas"]);
         }
     }
-
+    
+    //membuat method function add() yang dinyatakan sebagai public
     public function add(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -48,6 +53,7 @@ class addNilai {
     }
 }
 
+//membuat objek dari class addNilai
 $addObj = new addNilai();
 $add = $addObj->add();
 
