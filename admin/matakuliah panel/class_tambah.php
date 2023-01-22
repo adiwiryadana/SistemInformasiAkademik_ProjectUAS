@@ -34,6 +34,7 @@ class addMatakuliah {
     }
 }
 
+//membuat objek dari class addMatakuliah
 $delObj = new addMatakuliah();
 $hasil = $delObj->add();
 ?>
