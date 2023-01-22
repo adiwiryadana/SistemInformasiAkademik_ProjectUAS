@@ -159,18 +159,7 @@ $tampil = $db->tampilmhs();
                         </tr>
                         <tr>
                             <td>Prodi</td>
-                            <td><?php if($row['prodi']=='SK') {
-                                        echo "SISTEM KOMPUTER"; 
-                                    } else if($row['prodi']=='SI'){
-                                        echo "SISTEM INFORMASI";
-                                    }else if($row['prodi']=='TI'){
-                                        echo "TEKNOLOGI INFORMASI";
-                                    }else if($row['prodi']=='BD'){
-                                        echo "BISNIS DIGITAL";
-                                    }else if($row['prodi']=='MK'){
-                                        echo "MANAJEMEN INFORMATIKA";
-                                    }
-                                    ?></td>
+                            <td><?php echo $row['prodi'] ?></td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
