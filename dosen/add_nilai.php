@@ -21,10 +21,19 @@
     $uts=input($_POST["uts"]);
     $uas=input($_POST["uas"]);
      
-
+     $rata_rata = ($uas + $uts + $kuis + $tugas) / 4;     
+    if ($rata_rata >= 88) {
+        $nilai_akhir = 'A';
+    } else if ($rata_rata >= 80) {
+        $nilai_akhir = 'B';
+    } else if ($rata_rata >= 60) {
+        $nilai_akhir = 'C';
+    } else if ($rata_rata < 60) {
+        $nilai_akhir = 'D';
+    }
      //Query input data kedalam tabel anggota pada database
-     $sql="insert into nilai (nim,kode_mk,kuis,tugas,uts,uas) values
-     ('$nim','$kode_mk','$kuis','$tugas','$uts','$uas')";
+     $sql="insert into nilai (nim,kode_mk,kuis,tugas,uts,uas,rata_rata,nilai_akhir) values
+     ('$nim','$kode_mk','$kuis','$tugas','$uts','$uas','$rata_rata','$nilai_akhir')";
 
      //Mengeksekusi query diatas
      $db = new koneksi();
