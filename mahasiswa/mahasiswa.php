@@ -244,6 +244,7 @@ $tampil = $db->tampilmhs();
         $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$_SESSION[nim]'");
         $data = mysqli_fetch_array($query);
         $no = 1;
+        //query untuk melakukan READ nilai mahasiswa dengan melakukan JOIN pada table nilai dan matakuliah
         $query = 
             "SELECT nilai.kode_mk, matakuliah.nama_mk, uas, uts, tugas, kuis, rata_rata, nilai_akhir
             FROM nilai inner join matakuliah 
