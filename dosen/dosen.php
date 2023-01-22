@@ -154,7 +154,7 @@ $kode_mk = $dt['kode_mk'];
         </div>
     </section>
     
-    <!-- Code ini digunakan untuk mengambil data dari jadwal dosen dan mengecek apakah ada data yang ditemukan atau tidak. -->
+    <!--Code ini digunakan untuk mengambil data dari jadwal dosen dan mengecek apakah ada data yang ditemukan atau tidak.-->
     <?php
         $jdw = $db->jdw_dsn();
         if (mysqli_num_rows($db->data)>0) {
@@ -209,6 +209,7 @@ $kode_mk = $dt['kode_mk'];
                         <div class="mb-3">
                             <label for="nim" class="form-label">NIM</label>
                             <select name="nim" class="form-control" id="nim">
+                                <!-- query untuk menampilkan data dari database -->
                                 <?php
                                     $query = "SELECT mahasiswa.nim, kelas.kode_kelas
                                     FROM mahasiswa inner join kelas
