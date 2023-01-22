@@ -1,10 +1,14 @@
 <?php
-include('../../cekadmin.php');
-include('../../koneksi.php');
+
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php kedalam file edit_matakuliah.php
+include('../../koneksi.php'); //koneksi ke database dengan menyertakan file koneksi.php
+
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-class Matakuliah {
+class Matakuliah { //membuat dan mendeklarasikan class Matakuliah yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $kode_mk;
     public $nama_mk;
     public $sks;
@@ -13,6 +17,7 @@ class Matakuliah {
     public $sql;
     public $data;
 
+    //membuat method function getKode_mk() yang dinyatakan sebagai public
     public function getKode_mk()
     {
         if(isset($_GET['kode_mk'])){
@@ -20,6 +25,7 @@ class Matakuliah {
         }
     }
 
+    //membuat method function read() yang dinyatakan sebagai public
     public function read() {
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -31,6 +37,7 @@ class Matakuliah {
     }
 }
 
+//membuat objek dari class matakuliah
 $updateObj = new matakuliah();
 $getmk = $updateObj->getKode_mk();
 $hasil = $updateObj->read();
