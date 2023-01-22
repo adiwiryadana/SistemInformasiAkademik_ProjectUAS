@@ -1,13 +1,16 @@
 <?php
+
+//membuat koneksi ke database
 include('../../koneksi.php');
 
-class delNilai{
+class delNilai{ //menambahkan dan mendeklarasikan class delNilai yang dimana didalamnya terdapat properti dan juga method
 
+    //membuat properti yang dinyatakan sebagai public
     public $kode_mk;
     public $data;
     public $nim;
 
-
+    //membuat method function __construct() yang dinyatakan sebagai public
     public function __construct()
     {
         if(isset($_GET['kode_mk'])){
@@ -18,6 +21,7 @@ class delNilai{
          }
     }
 
+    //membuat method function delete() yang dinyatakan sebagai public
     public function delete(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -29,7 +33,7 @@ class delNilai{
         }
     }
 }
-
+//membuat objek dari class delNilai
 $delObj = new delNilai();
 $hasil = $delObj->delete();
 ?>  
