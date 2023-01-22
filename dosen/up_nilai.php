@@ -105,7 +105,7 @@ if(isset($_GET['nim'])){
                 </div>
                 <div class="card-body">
                     <form action="class_up_nilai.php" method="post">
-                    //query untuk menampilkan data tabel nilai dari database 
+                    <!--query untuk menampilkan data tabel nilai dari database--> 
                     <?php 
                             $data=mysqli_query($koneksi, "SELECT * FROM nilai where kode_mk='$kode_mk' AND nim='$nim'");
                             $row = mysqli_fetch_array($data)
