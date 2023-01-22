@@ -20,8 +20,10 @@
     $tugas=input($_POST["tugas"]);
     $uts=input($_POST["uts"]);
     $uas=input($_POST["uas"]);
-     
-     $rata_rata = ($uas + $uts + $kuis + $tugas) / 4;     
+    
+    //menghitung nilai rata rata berdasarkan nilai uas, uts, kuis, dan tugas mahasiswa
+    $rata_rata = ($uas + $uts + $kuis + $tugas) / 4;   
+    //pengkondisian untuk mencari nilai akhir berdasarkan nilai rata rata mahasiswa
     if ($rata_rata >= 88) {
         $nilai_akhir = 'A';
     } else if ($rata_rata >= 80) {
