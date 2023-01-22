@@ -1,11 +1,15 @@
 <?php
 
-include('../../cekadmin.php');
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php ke dalam file edit_nilai.php
+//koneksi ke database
 include('../../koneksi.php');
+
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-class Nilai {
+class Nilai { //membuat dan mendeklarasikan class Nilai yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $kode_nilai;
     public $nim;
     public $kode_mk;
@@ -17,6 +21,7 @@ class Nilai {
     public $query;
     public $data;
 
+    //membuat method __construct() yang dinyatakan sebagai public
     public function __construct()
     {
         if(isset($_GET['kode_mk'])){
@@ -27,6 +32,7 @@ class Nilai {
         }
     }   
 
+    //membuat method read() yang dinyatakan sebagai public
     public function read() {
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -36,6 +42,7 @@ class Nilai {
     }
 }
 
+//membuat objek dari class Nilai
 $updateObj = new Nilai();
 $hasil = $updateObj->read();
 ?>
