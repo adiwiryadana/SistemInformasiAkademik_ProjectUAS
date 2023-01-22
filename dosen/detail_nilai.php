@@ -122,7 +122,7 @@ if(isset($_GET['kode_mk'])){
                             <th colspan="2">Aksi</th>
                         </th>
                          
-                        //query untuk menampilkan data dari database
+                        <!--query untuk menampilkan data dari database-->
                         <?php 
                             $data=mysqli_query($koneksi, "SELECT mahasiswa.nim, mahasiswa.nama, kelas.kode_kelas, nilai.uas, uts, tugas, kuis, rata_rata, nilai_akhir FROM nilai inner join mahasiswa on mahasiswa.nim = nilai.nim 
                             inner join kelas on mahasiswa.kode_kelas = kelas.kode_kelas
