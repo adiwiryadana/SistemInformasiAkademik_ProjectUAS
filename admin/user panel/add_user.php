@@ -14,6 +14,7 @@
         public $sql_TbUser; //membuat properti $sql_TbUser yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
         public $sql_TbMhs; //membuat properti $sql_TbMhs yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
         public $sql_TbDosen; //membuat properti $TbDosen yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+        public $prodi; //membuat properti $prodi yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
 
         //membuat method __construct() yang dinyatakan sebagai public
         public function __construct(){
@@ -24,6 +25,7 @@
                 $this->username = ($_POST["username"]);
                 $this->password = ($_POST["password"]);
                 $this->level = ($_POST["level"]);
+                $this->prodi = ($_POST["prodi"]);
             }   
         }
 
@@ -32,11 +34,11 @@
             $this->sql_TbUser = $sql_user = "insert into user (username,password,level,nama,nim) values
             ('$this->username','$this->password','$this->level','$this->nama','$this->nim')";
             
-            $this->sql_TbDosen = $sql_dosen = "insert into dosen (nama,nim) values
-            ('$this->nama','$this->nim')";
+            $this->sql_TbDosen = $sql_dosen = "insert into dosen (nama,nim,gender) values
+            ('$this->nama','$this->nim', $this->gender)";
 
-            $this->sql_TbMhs = $sql_mhs = "insert into mahasiswa (nama,nim,kode_kelas) values
-            ('$this->nama','$this->nim','$this->kode_kelas')";
+            $this->sql_TbMhs = $sql_mhs = "insert into mahasiswa (nama,nim,kode_kelas,gender,prodi) values
+            ('$this->nama','$this->nim','$this->kode_kelas', $this->gender, '$this->prodi')";
 
             $db = new koneksi();
             $koneksi = $db->getKoneksi();
