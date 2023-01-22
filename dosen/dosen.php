@@ -154,7 +154,7 @@ $kode_mk = $dt['kode_mk'];
         </div>
     </section>
     
-    //Code ini digunakan untuk mengambil data dari jadwal dosen dan mengecek apakah ada data yang ditemukan atau tidak.
+    <!-- Code ini digunakan untuk mengambil data dari jadwal dosen dan mengecek apakah ada data yang ditemukan atau tidak. -->
     <?php
         $jdw = $db->jdw_dsn();
         if (mysqli_num_rows($db->data)>0) {
