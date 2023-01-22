@@ -15,6 +15,7 @@
         public $sql_TbMhs; //membuat properti $sql_TbMhs yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
         public $sql_TbDosen; //membuat properti $TbDosen yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
         public $prodi; //membuat properti $prodi yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
+        public $gender; //membuat properti $gender yang dinyatakan sebagai public (seluruh kode program di luar class bisa mengaksesnya)
 
         //membuat method __construct() yang dinyatakan sebagai public
         public function __construct(){
@@ -26,6 +27,7 @@
                 $this->password = ($_POST["password"]);
                 $this->level = ($_POST["level"]);
                 $this->prodi = ($_POST["prodi"]);
+                $this->gender = ($_POST["gender"]);
             }   
         }
 
