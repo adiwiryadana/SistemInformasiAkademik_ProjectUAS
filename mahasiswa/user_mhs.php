@@ -142,16 +142,6 @@ $tampil = $db->tampilmhs();
                             <label for="ibu" class="form-label">Nama Ibu</label>
                             <input type="text" name="ibu" class="form-control" id="ibu" aria-describedby="ibu" value="<?php echo $row['ibu'] ?>">
                         </div>
-                        <div class="mt-3">
-                            <label for="prodi" class="form-label">Prodi</label>
-                            <select name="prodi" class="form-control" id="prodi">
-                            <option value="">- Prodi -</option>
-                            <option value="SK" <?php if ($row['prodi']=='SK'){echo"SELECTED";}?>>S1-Sistem Komputer</option>
-                            <option value="SI" <?php if ($row['prodi']=='SI'){echo"SELECTED";}?>>S1-Sistem Informasi</option>
-                            <option value="TI" <?php if ($row['prodi']=='TI'){echo"SELECTED";}?>>S1-Teknologi Informasi</option>
-                            <option value="BD" <?php if ($row['prodi']=='BD'){echo"SELECTED";}?>>S1-Bisnis Digital</option>
-                            <option value="MI" <?php if ($row['prodi']=='MI'){echo"SELECTED";}?>>D3-Manajemen Informatika</option>
-                        </select>
                         </div>
                         <div class="mt-3">
                             <label for="alamat" class="form-label">Alamat</label>
