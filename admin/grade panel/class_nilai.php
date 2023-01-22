@@ -1,12 +1,17 @@
 <?php
+
+//koneksi ke database
 include('../../koneksi.php');
-include('../../cekadmin.php');
+include('../../cekadmin.php');  //menyisipkan file cekadmin.php ke dalam file class_nilai.php pada grade panel
+
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-class nilai {
-    public $nim;
+class nilai { //membuat dan mendeklarasikan class nilai yang dimana didalamnya terdapat properti dan juga method
+    
+    public $nim; //membuat properti $nim yang dinyatakan sebagai public 
 
+    //membuat method __construct() yang dinyatakan sebagai public
     public function  __construct(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->nim = ($_POST["nim"]);
@@ -17,6 +22,8 @@ class nilai {
         }
     }
 }
+
+//membuat objek dari class nilai
 $nilaiObj = new nilai();
 ?>
 
