@@ -142,7 +142,6 @@ $tampil = $db->tampilmhs();
                             <label for="ibu" class="form-label">Nama Ibu</label>
                             <input type="text" name="ibu" class="form-control" id="ibu" aria-describedby="ibu" value="<?php echo $row['ibu'] ?>">
                         </div>
-                        </div>
                         <div class="mt-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="alamat" aria-describedby="alamat" value="<?php echo $row['alamat'] ?>">
