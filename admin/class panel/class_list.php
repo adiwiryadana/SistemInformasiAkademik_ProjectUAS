@@ -29,7 +29,7 @@ $row = $dataObj->tampil_list();
 
 <head>
     <title>SIAK - LIST KELAS</title>
-    <?php include "../../header.php" ?> //menyisipkan file header.php ke dalam class_list.php
+    <?php include "../../header.php" ?> <!--  menyisipkan file header.php ke dalam class_list.php --> 
     <link rel="stylesheet" href="../../style.css">
 </head>
 
@@ -162,7 +162,7 @@ $row = $dataObj->tampil_list();
     </div>
     
     <!-- Footer -->
-    <?php include "../../footer.php" ?> //menyisipkan file footer.php ke dalam class_list.php
+    <?php include "../../footer.php" ?> <!-- menyisipkan file footer.php ke dalam class_list.php -->
     
     <!-- JS -->
     <script>
