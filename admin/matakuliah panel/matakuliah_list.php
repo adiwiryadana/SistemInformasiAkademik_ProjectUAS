@@ -1,12 +1,16 @@
 <?php
+//koneksi ke database dengan menyertakan file koneksi.php
 include("../../koneksi.php");
-include('../../cekadmin.php');
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php ke file matakuliah_list.php
 
 
-class tampil{
+class tampil{ //membuat dan mendeklarasikan class tampil yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $query;
     public $data;
 
+    //membuat method function tampil_list() yang dinyatakan sebagai public
     public function tampil_list(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -16,6 +20,7 @@ class tampil{
     }
 }
 
+//membuat objek dari class tampil()
 $dataObj = new tampil();
 $row = $dataObj->tampil_list();
 ?>
