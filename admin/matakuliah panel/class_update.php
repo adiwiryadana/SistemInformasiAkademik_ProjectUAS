@@ -1,16 +1,22 @@
 <?php
-include('../../cekadmin.php');
+
+include('../../cekadmin.php'); //menyisipkan file cekadmin.php ke dalam class_update.php
+//membuat koneksi ke database dengan menyertakan koneksi.php
 include('../../koneksi.php');
+
 $db = new koneksi();
 $koneksi = $db->getKoneksi();
 
-class updateMk {
+class updateMk { //membuat dan mendeklarasikan class updateMk yang dimana didalamnya terdapat properti dan juga method
+    
+    //membuat properti yang dinyatakan sebagai public
     public $kode_mk;
     public $nama_mk;
     public $sks;
     public $nim;
     public $query;
 
+    //membuat method function __construct() yang dinyatakan sebagai public
     public function __construct(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->kode_mk = ($_POST["kode_mk"]);
@@ -20,6 +26,7 @@ class updateMk {
         }
     }
 
+    //membuat method function update() yang dinyatakan sebagai public
     public function update(){
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
@@ -32,6 +39,7 @@ class updateMk {
     }
 }
 
+//membuat objek dari class updateMk
 $obj = new updateMk();
 $hasil = $obj->update();
 ?>
