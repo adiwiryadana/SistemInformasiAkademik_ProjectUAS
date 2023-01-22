@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = ($_POST["email"]);
     $ayah = ($_POST["ayah"]);
     $ibu = ($_POST["ibu"]);
-    $prodi = ($_POST["prodi"]);
     $alamat = ($_POST["alamat"]);
 
     $db = new koneksi();
@@ -20,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //query untuk melakukan update pada data mahasiswa
     $sql = "UPDATE mahasiswa SET tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir',
         gender='$gender', phone='$phone', email='$email', ayah='$ayah',
-        ibu='$ibu', prodi='$prodi', alamat='$alamat' WHERE nim='$Nim'";
+        ibu='$ibu', alamat='$alamat' WHERE nim='$Nim'";
 
         $hasil =  mysqli_query($koneksi, $sql);
 
