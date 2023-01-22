@@ -29,7 +29,7 @@ class Matakuliah { //membuat dan mendeklarasikan class Matakuliah yang dimana di
     public function read() {
         $db = new koneksi();
         $koneksi = $db->getKoneksi();
-
+        //query untuk meakukan read dengan melakukan JOIN terhadap tabel matakuliah dan dosen
         $this->sql = mysqli_query($koneksi, "SELECT matakuliah.kode_mk, nama_mk, sks, matakuliah.nim, dosen.nama FROM matakuliah INNER JOIN dosen
         ON matakuliah.nim = dosen.nim
         WHERE kode_mk='$this->kode_mk'");
@@ -165,6 +165,7 @@ $hasil = $updateObj->read();
                             <label for="nim" class="form-label">Dosen</label>
                             <select name="nim" class="form-control" id="nim" required>
                                 <?php
+                                    //mengambil list dosen dari table dosen
                                     $sql = "SELECT * FROM dosen";
                                     $data = mysqli_query($koneksi,$sql);
                                 ?>
